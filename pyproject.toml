@@ -1,0 +1,24 @@
+[project]
+name = "taskflow-api"
+version = "1.0.0"
+description = "Production-grade task management REST API — FastAPI, JWT rotation, RBAC, rate limiting"
+authors = [{ name = "Reza Bazdar (Godde3s)" }]
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "S", "ASYNC"]
+ignore = ["S101"]  # asserts allowed in tests
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+
+[tool.ruff.format]
+quote-style = "double"
